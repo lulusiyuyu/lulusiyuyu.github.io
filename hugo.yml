@@ -1,7 +1,9 @@
 baseURL: 'https://lulusiyuyu.github.io/'
 title: '刘时宇 (Liu Shiyu)'
-paginate: 5
 theme: 'PaperMod'
+
+pagination:
+  pagerSize: 5
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
