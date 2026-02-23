@@ -84,13 +84,16 @@ my-personal-blog/
 │       └── hello-world.md         # 第一篇博文
 ├── docs/
 │   └── PROJECT_CONTEXT.md         # 本文件：AI Agent 上下文记忆
+├── layouts/
+│   ├── _default/
+│   │   └── list.html              # 重写主页模板，注入 About 简历页面的内容且配置多段连贯 Apple 式动效
+│   └── partials/
+│       └── extend_footer.html     # JS 注入，负责 IntersectionObserver Fade-Up 动效
 ├── themes/
 │   └── PaperMod/                  # 主题（Git Submodule，勿直接修改）
 ├── hugo.yml                       # Hugo 核心配置（注意：不是 hugo.toml）
 └── README.md                      # 项目说明文档
 ```
-
-> ⚠️ `layouts/partials/extend_footer.html` 已删除（动效被回滚）
 
 ---
 
@@ -178,7 +181,8 @@ git push origin main
 
 > 经过用户明确要求（2026-02-23），现已全面部署 **Apple 苹果风格** 视觉体系：
 > - **简约理念**：大量留白，使用极简配色与 SF Pro Display/Apple 字体。
-> - **呼吸动效 (Motion)**：内容区域滚动时触发 Fade-Up 与平滑上滑（通过 IntersectionObserver 在 `extend_footer.html` 实现）。
+> - **呼吸动效 (Motion)**：内容区域滚动时触发 Fade-Up 与平滑上滑（通过 IntersectionObserver 在 `extend_footer.html` 实现）。修复了在深色模式下的各种可读性问题，移除了滚动回弹 (OverscrollBounce)。
+> - **单页动效架构 (Single Page Experience)**：`About` 关于我页面的内容不再通过按钮和菜单单独点击进入，而是直接注入到了主页 (`layouts/_default/list.html`)。所有的段落、标题都附带了滚轮滑下时的 Apple 丝滑展现。
 > - **微小细节**：运用 Backdrop-filter（毛玻璃顶部导航/Glassmorphism）、小半径圆角（14px~20px）、Pill 形状按钮（圆角 980px）、微小交互浮动缩放等原生质感 UI。
 > - **注意事项**：请勿破坏此风格的纯粹感，严禁再使用高饱和度的渐变光晕/Blob（以前被回滚过），后续若需调整或增加组件，必须符合这种内敛、干练的 Apple 品牌质感。
 

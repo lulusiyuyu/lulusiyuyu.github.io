@@ -34,8 +34,6 @@ params:
     imageWidth: 120
     imageHeight: 120
     buttons:
-      - name: '关于我 (About Me)'
-        url: '/about'
       - name: '博客文章 (Posts)'
         url: '/posts'
       - name: 'GitHub'
@@ -43,10 +41,6 @@ params:
 
 menu:
   main:
-    - identifier: 'about'
-      name: '关于我对接简历 (About)'
-      url: '/about/'
-      weight: 10
     - identifier: 'posts'
       name: '博客 (Posts)'
       url: '/posts/'

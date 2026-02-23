@@ -39,13 +39,18 @@ lulusiyuyu.github.io/
 ├── assets/
 │   └── css/
 │       └── extended/
-│           └── custom.css         # 自定义 CSS（当前为空，可在此扩展）
+│           └── custom.css         # 自定义 CSS（包含 Apple 风格变量与滚动动效）
 ├── content/
-│   ├── about.md                   # 关于我 / 简历页
+│   ├── about.md                   # 关于我 / 简历页（已作为内容组件嵌入到首页呈现）
 │   └── posts/
 │       └── hello-world.md         # 第一篇博文
 ├── docs/
 │   └── PROJECT_CONTEXT.md         # AI Agent 上下文记忆
+├── layouts/
+│   ├── _default/
+│   │   └── list.html              # 覆写的主页列表模板（注入了 About 页面的滚动动效呈现）
+│   └── partials/
+│       └── extend_footer.html     # 注入用于触发 Fade-Up 苹果式滚动动效的 JS
 ├── themes/
 │   └── PaperMod/                  # 主题（Git Submodule）
 ├── hugo.yml                       # Hugo 核心配置文件
