@@ -2,7 +2,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         // Select elements that should have the Apple-style fade-up animation
         const elementsToAnimate = document.querySelectorAll(
-            '.post-entry, .profile_inner, .post-content > p, .post-content > h1, .post-content > h2, .post-content > h3, .post-content > ul, .page-header, .footer, .home-about-section .post-content > *'
+            '.post-entry, .profile_inner, .post-content > p, .post-content > h1, .post-content > h2, .post-content > h3, .post-content > ul, .page-header, .footer, .home-about-section, .home-about-section .post-content > *'
         );
 
         // Add the starting state class to all identified elements
@@ -11,16 +11,13 @@
         });
 
         // Intersection Observer to trigger the animation when scrolled into view
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Add tiny delay for staggered effect when multiple elements appear at once
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, 50);
-
-                    // Stop observing once animated
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('visible');
+                } else {
+                    // Apple-style reversible scroll: play exit animation when scrolling away
+                    entry.target.classList.remove('visible');
                 }
             });
         }, {
