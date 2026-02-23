@@ -1,0 +1,51 @@
+baseURL: 'https://lulusiyuyu.github.io/'
+title: '刘时宇 (Liu Shiyu)'
+paginate: 5
+theme: 'PaperMod'
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+author: '刘时宇'
+
+params:
+  env: production
+  title: '刘时宇 (Liu Shiyu)'
+  description: 'Researcher & Developer in Recommendation Systems and Backend.'
+  author: '刘时宇'
+  defaultTheme: auto
+  ShowShareButtons: true
+  ShowReadingTime: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+
+  profileMode:
+    enabled: true
+    title: 'Hi, I am 刘时宇 (Liu Shiyu) 👋'
+    subtitle: '推荐系统 | 后端开发 | 模型部署'
+    imageUrl: 'https://github.com/lulusiyuyu.png'
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: '关于我 (About Me)'
+        url: '/about'
+      - name: '博客文章 (Posts)'
+        url: '/posts'
+      - name: 'GitHub'
+        url: 'https://github.com/lulusiyuyu'
+
+menu:
+  main:
+    - identifier: 'about'
+      name: '关于我对接简历 (About)'
+      url: '/about/'
+      weight: 10
+    - identifier: 'posts'
+      name: '博客 (Posts)'
+      url: '/posts/'
+      weight: 20
