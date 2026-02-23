@@ -35,24 +35,21 @@
 lulusiyuyu.github.io/
 ├── .github/
 │   └── workflows/
-│       └── hugo.yaml                  # GitHub Actions 自动部署配置
-├── content/
-│   ├── about.md                       # 关于我 / 简历页
-│   └── posts/                         # 博客文章目录
-│       └── hello-world.md             # 第一篇博文
-├── themes/
-│   └── PaperMod/                      # 主题（Git Submodule）
+│       └── hugo.yaml              # GitHub Actions 自动部署配置
 ├── assets/
 │   └── css/
 │       └── extended/
-│           └── glow-bg.css            # 背景光晕动效 CSS
-├── layouts/
-│   └── partials/
-│       └── extend_footer.html         # 背景 DOM 注入 + JS 动效
+│           └── custom.css         # 自定义 CSS（当前为空，可在此扩展）
+├── content/
+│   ├── about.md                   # 关于我 / 简历页
+│   └── posts/
+│       └── hello-world.md         # 第一篇博文
 ├── docs/
-│   └── PROJECT_CONTEXT.md             # AI Agent 上下文记忆文件
-├── hugo.yml                           # Hugo 核心配置文件
-└── README.md                          # 本文件
+│   └── PROJECT_CONTEXT.md         # AI Agent 上下文记忆
+├── themes/
+│   └── PaperMod/                  # 主题（Git Submodule）
+├── hugo.yml                       # Hugo 核心配置文件
+└── README.md                      # 本文件
 ```
 
 ---
@@ -60,8 +57,7 @@ lulusiyuyu.github.io/
 ## 🚀 本地运行
 
 ### 前置要求
-
-- [Hugo Extended v0.146.0+](https://gohugo.io/installation/)
+- Hugo Extended v0.146.0+（本机安装在 `~/.local/bin/hugo`）
 - Git
 
 ### 步骤
@@ -72,24 +68,21 @@ git clone --recurse-submodules git@github.com:lulusiyuyu/lulusiyuyu.github.io.gi
 cd lulusiyuyu.github.io
 
 # 2. 启动本地开发服务器（含草稿）
-hugo server --buildDrafts
+~/.local/bin/hugo server --buildDrafts
 
 # 3. 在浏览器中访问
 # http://localhost:1313
 ```
-
-> 注：本机 Hugo 安装路径为 `~/.local/bin/hugo`
 
 ---
 
 ## ✍️ 写新博文
 
 ```bash
-# 新建一篇博文（文件名建议用 kebab-case 英文）
-hugo new content posts/my-new-post.md
+~/.local/bin/hugo new content posts/my-new-post.md
 ```
 
-Hugo 会自动生成带有 `draft: true` 的 frontmatter。写完后，将 `draft` 改为 `false`，然后 `git push` 即可自动触发部署。
+写完后将 `draft: true` 改为 `false`，然后 `git push` 即触发自动部署。
 
 ---
 
@@ -102,9 +95,7 @@ Hugo 会自动生成带有 `draft: true` 的 frontmatter。写完后，将 `draf
 3. 执行 `hugo --gc --minify` 构建并压缩
 4. 将 `public/` 目录发布到 GitHub Pages
 
-整个流程大约需要 **30~60 秒**，完成后网站自动上线。
-
-> ⚠️ **注意**：需要在仓库 Settings → Pages → Build and deployment → Source 中选择 **GitHub Actions**，否则不会生效。
+> ⚠️ 需在仓库 **Settings → Pages → Source** 中选择 **`GitHub Actions`**，否则不会生效。
 
 ---
 
@@ -114,24 +105,9 @@ Hugo 会自动生成带有 `draft: true` 的 frontmatter。写完后，将 `draf
 |---|---|
 | 修改站点配置（标题、菜单等）| `hugo.yml` |
 | 添加自定义 CSS | `assets/css/extended/*.css`（Hugo 自动合并）|
-| 添加自定义 JS / DOM | `layouts/partials/extend_footer.html` |
+| 添加自定义 JS / DOM | 创建 `layouts/partials/extend_footer.html` |
 | 修改"关于我"页 | `content/about.md` |
 | AI Agent 上下文 | `docs/PROJECT_CONTEXT.md` |
-
----
-
-## ✨ 背景动效说明
-
-首页实现了一套**纯 GPU 合成层**的背景光晕动效：
-
-- 3 个固定定位的渐变光晕 Blob（深洋蓝 / 暗紫 / 深青）
-- **入场动效**：页面打开时光晕缓慢浮现（CSS `opacity` 动画，2.8s）
-- **滚轮联动**：鼠标滚轮滑动时，光晕以不同速率位移，产生层次感
-- **性能保证**：
-  - 仅使用 `transform: translate3d()` 驱动动画，零重排 / 零重绘
-  - `will-change: transform` 强制 GPU 独立图层
-  - `requestAnimationFrame` + 线性插值 (Lerp) + 指数衰减，丝滑 60fps
-  - 支持触摸设备，兼容 `prefers-reduced-motion`
 
 ---
 
