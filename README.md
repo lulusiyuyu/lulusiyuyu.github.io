@@ -50,7 +50,7 @@ lulusiyuyu.github.io/
 │   ├── _default/
 │   │   └── list.html              # 覆写的主页列表模板（注入了 About 页面的滚动动效呈现）
 │   └── partials/
-│       └── extend_footer.html     # 注入用于触发 Fade-Up 苹果式滚动动效的 JS
+│       └── extend_footer.html     # 注入用于触发 Fade-Up 苹果式双向滚动动效的 JS
 ├── themes/
 │   └── PaperMod/                  # 主题（Git Submodule）
 ├── hugo.yml                       # Hugo 核心配置文件

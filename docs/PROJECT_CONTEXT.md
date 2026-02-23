@@ -179,9 +179,9 @@ git push origin main
 
 ## 🎨 设计风格偏好（重要！给下一个 Agent 的提示）
 
-> 经过用户明确要求（2026-02-23），现已全面部署 **Apple 苹果风格** 视觉体系：
+> 经过用户明确要求（2026-02-23与02-24），现已全面部署 **Apple 苹果风格** 视觉体系：
 > - **简约理念**：大量留白，使用极简配色与 SF Pro Display/Apple 字体。
-> - **呼吸动效 (Motion)**：内容区域滚动时触发 Fade-Up 与平滑上滑（通过 IntersectionObserver 在 `extend_footer.html` 实现）。修复了在深色模式下的各种可读性问题，移除了滚动回弹 (OverscrollBounce)。
+> - **呼吸动效 (Motion)**：内容区域滚动时触发 Fade-Up 与平滑上滑（通过 IntersectionObserver 在 `extend_footer.html` 实现）。修复了在深色模式下的各种可读性问题，移除了滚动回弹 (OverscrollBounce)。支持**正反双向动画播放**，上滑时剥离可见类，再次遇界即播放，极具质感。包含About大外框也具备此出场效果。
 > - **单页动效架构 (Single Page Experience)**：`About` 关于我页面的内容不再通过按钮和菜单单独点击进入，而是直接注入到了主页 (`layouts/_default/list.html`)。所有的段落、标题都附带了滚轮滑下时的 Apple 丝滑展现。
 > - **微小细节**：运用 Backdrop-filter（毛玻璃顶部导航/Glassmorphism）、小半径圆角（14px~20px）、Pill 形状按钮（圆角 980px）、微小交互浮动缩放等原生质感 UI。
 > - **注意事项**：请勿破坏此风格的纯粹感，严禁再使用高饱和度的渐变光晕/Blob（以前被回滚过），后续若需调整或增加组件，必须符合这种内敛、干练的 Apple 品牌质感。
