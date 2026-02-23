@@ -2,7 +2,7 @@
 
 [![Deploy Hugo site to Pages](https://github.com/lulusiyuyu/lulusiyuyu.github.io/actions/workflows/hugo.yaml/badge.svg)](https://github.com/lulusiyuyu/lulusiyuyu.github.io/actions/workflows/hugo.yaml)
 
-🌐 **在线地址**：[https://lulusiyuyu.github.io](https://lulusiyuyu.github.io)
+🌐 **在线地址**：[https://lulusiyuyu.github.io](https://lulusiyuyu.github.io)　　📋 **项目上下文**：[docs/PROJECT_CONTEXT.md](./docs/PROJECT_CONTEXT.md)
 
 ---
 
@@ -35,20 +35,24 @@
 lulusiyuyu.github.io/
 ├── .github/
 │   └── workflows/
-│       └── hugo.yaml          # GitHub Actions 自动部署配置
+│       └── hugo.yaml                  # GitHub Actions 自动部署配置
 ├── content/
-│   ├── about.md               # 关于我 / 简历页
-│   └── posts/                 # 博客文章目录
-│       └── hello-world.md     # 第一篇博文
+│   ├── about.md                       # 关于我 / 简历页
+│   └── posts/                         # 博客文章目录
+│       └── hello-world.md             # 第一篇博文
 ├── themes/
-│   └── PaperMod/              # 主题（Git Submodule）
+│   └── PaperMod/                      # 主题（Git Submodule）
 ├── assets/
 │   └── css/
-│       └── extended/          # 自定义 CSS 扩展目录
+│       └── extended/
+│           └── glow-bg.css            # 背景光晕动效 CSS
 ├── layouts/
-│   └── partials/              # 自定义 Hugo 模板片段
-├── hugo.yml                   # Hugo 核心配置文件
-└── README.md                  # 本文件
+│   └── partials/
+│       └── extend_footer.html         # 背景 DOM 注入 + JS 动效
+├── docs/
+│   └── PROJECT_CONTEXT.md             # AI Agent 上下文记忆文件
+├── hugo.yml                           # Hugo 核心配置文件
+└── README.md                          # 本文件
 ```
 
 ---
@@ -74,6 +78,8 @@ hugo server --buildDrafts
 # http://localhost:1313
 ```
 
+> 注：本机 Hugo 安装路径为 `~/.local/bin/hugo`
+
 ---
 
 ## ✍️ 写新博文
@@ -98,6 +104,8 @@ Hugo 会自动生成带有 `draft: true` 的 frontmatter。写完后，将 `draf
 
 整个流程大约需要 **30~60 秒**，完成后网站自动上线。
 
+> ⚠️ **注意**：需要在仓库 Settings → Pages → Build and deployment → Source 中选择 **GitHub Actions**，否则不会生效。
+
 ---
 
 ## 🎨 自定义与扩展
@@ -105,9 +113,25 @@ Hugo 会自动生成带有 `draft: true` 的 frontmatter。写完后，将 `draf
 | 操作 | 文件位置 |
 |---|---|
 | 修改站点配置（标题、菜单等）| `hugo.yml` |
-| 添加自定义 CSS | `assets/css/extended/custom.css` |
-| 添加自定义 JS | `layouts/partials/extend_footer.html` |
+| 添加自定义 CSS | `assets/css/extended/*.css`（Hugo 自动合并）|
+| 添加自定义 JS / DOM | `layouts/partials/extend_footer.html` |
 | 修改"关于我"页 | `content/about.md` |
+| AI Agent 上下文 | `docs/PROJECT_CONTEXT.md` |
+
+---
+
+## ✨ 背景动效说明
+
+首页实现了一套**纯 GPU 合成层**的背景光晕动效：
+
+- 3 个固定定位的渐变光晕 Blob（深洋蓝 / 暗紫 / 深青）
+- **入场动效**：页面打开时光晕缓慢浮现（CSS `opacity` 动画，2.8s）
+- **滚轮联动**：鼠标滚轮滑动时，光晕以不同速率位移，产生层次感
+- **性能保证**：
+  - 仅使用 `transform: translate3d()` 驱动动画，零重排 / 零重绘
+  - `will-change: transform` 强制 GPU 独立图层
+  - `requestAnimationFrame` + 线性插值 (Lerp) + 指数衰减，丝滑 60fps
+  - 支持触摸设备，兼容 `prefers-reduced-motion`
 
 ---
 

@@ -1,0 +1,83 @@
+/* ============================================================
+   GPU-Only Background Glow — Zero Reflow, Zero Repaint
+   Only transform: translate3d() & opacity are animated.
+   ============================================================ */
+
+/* Make body transparent so fixed blobs show through */
+body {
+    background-color: transparent !important;
+}
+
+html {
+    /* match PaperMod dark theme base */
+    background-color: #1a1b1e;
+}
+
+/* ── Blob container ── */
+.bg-glow-layer {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    /* isolate compositing */
+    isolation: isolate;
+}
+
+/* ── Base blob style ── */
+.bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform, opacity;
+    opacity: 0;
+    /* entrance: only animate opacity — no conflict with JS-driven transform */
+    animation: blob-fade-in 2.8s ease-out forwards;
+}
+
+/* ── Blob 1: Top-left — deep ocean blue ── */
+.bg-blob--1 {
+    width: 80vmax;
+    height: 80vmax;
+    top: -25%;
+    left: -20%;
+    background: radial-gradient(ellipse at center,
+            rgba(42, 82, 152, 0.20) 0%,
+            transparent 68%);
+    animation-delay: 0s;
+    /* JS will add inline style: transform: translate3d(0, Xpx, 0) */
+}
+
+/* ── Blob 2: Bottom-right — dark violet ── */
+.bg-blob--2 {
+    width: 65vmax;
+    height: 65vmax;
+    bottom: -20%;
+    right: -12%;
+    background: radial-gradient(ellipse at center,
+            rgba(88, 50, 140, 0.18) 0%,
+            transparent 68%);
+    animation-delay: 0.5s;
+}
+
+/* ── Blob 3: Mid-right — deep teal glimmer ── */
+.bg-blob--3 {
+    width: 45vmax;
+    height: 45vmax;
+    top: 15%;
+    right: 10%;
+    background: radial-gradient(ellipse at center,
+            rgba(22, 105, 118, 0.13) 0%,
+            transparent 65%);
+    animation-delay: 1s;
+}
+
+/* ── Entrance: opacity only ── */
+@keyframes blob-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

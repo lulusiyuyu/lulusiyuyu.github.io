@@ -1,0 +1,102 @@
+<!-- GPU-accelerated background glow blobs -->
+<div class="bg-glow-layer" aria-hidden="true">
+    <div class="bg-blob bg-blob--1" id="blob1"></div>
+    <div class="bg-blob bg-blob--2" id="blob2"></div>
+    <div class="bg-blob bg-blob--3" id="blob3"></div>
+</div>
+
+<script>
+    /**
+     * Background Glow — Scroll-Wheel Parallax
+     *
+     * Rules enforced:
+     *  - No canvas / WebGL / third-party libs
+     *  - No box-shadow / filter:blur / position changes during scroll
+     *  - Only transform: translate3d() driven by CSS variables
+     *  - rAF loop + linear interpolation (Lerp) for smoothness
+     *  - will-change: transform on each blob (set in CSS)
+     */
+    (function () {
+        'use strict';
+
+        var blob1 = document.getElementById('blob1');
+        var blob2 = document.getElementById('blob2');
+        var blob3 = document.getElementById('blob3');
+
+        if (!blob1 || !blob2 || !blob3) return;
+
+        /* ── State ── */
+        var targetOffset = 0;  // where we want to be (px)
+        var offset = 0;        // current interpolated position
+        var rafId = null;
+
+        var MAX_OFFSET = 90;   // max px shift
+        var LERP_FACTOR = 0.055; // lower = smoother tail
+        var DECAY = 0.90;  // targetOffset eases back to 0 over time
+
+        /* ── Parallax multipliers per blob ── */
+        var MUL1 = -0.65; // blob1 moves up when scrolling down
+        var MUL2 = 0.80; // blob2 moves down
+        var MUL3 = 0.30; // blob3 subtle, slight rotation
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        /* Apply transform — ONLY translate3d / rotate, no layout props */
+        function applyTransform(off) {
+            var y1 = (off * MUL1).toFixed(3);
+            var y2 = (off * MUL2).toFixed(3);
+            var y3 = (off * MUL3).toFixed(3);
+            var r3 = (off * 0.04).toFixed(3); // very subtle rotation
+
+            blob1.style.transform = 'translate3d(0,' + y1 + 'px,0)';
+            blob2.style.transform = 'translate3d(0,' + y2 + 'px,0)';
+            blob3.style.transform = 'translate3d(0,' + y3 + 'px,0) rotate(' + r3 + 'deg)';
+        }
+
+        /* rAF loop — runs only when there's motion to render */
+        function tick() {
+            targetOffset *= DECAY;
+            offset = lerp(offset, targetOffset, LERP_FACTOR);
+
+            applyTransform(offset);
+
+            /* Stop loop when motion is negligible */
+            if (Math.abs(offset - targetOffset) < 0.04 && Math.abs(targetOffset) < 0.08) {
+                rafId = null;
+                return;
+            }
+            rafId = requestAnimationFrame(tick);
+        }
+
+        function ensureRAF() {
+            if (!rafId) rafId = requestAnimationFrame(tick);
+        }
+
+        /* ── Wheel event ── */
+        window.addEventListener('wheel', function (e) {
+            e.preventDefault(); // keep page static (single-screen)
+            targetOffset = Math.max(
+                -MAX_OFFSET,
+                Math.min(MAX_OFFSET, targetOffset + e.deltaY * 0.38)
+            );
+            ensureRAF();
+        }, { passive: false });
+
+        /* ── Touch support ── */
+        var lastTouchY = 0;
+        window.addEventListener('touchstart', function (e) {
+            lastTouchY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', function (e) {
+            var dy = lastTouchY - e.touches[0].clientY;
+            lastTouchY = e.touches[0].clientY;
+            targetOffset = Math.max(
+                -MAX_OFFSET,
+                Math.min(MAX_OFFSET, targetOffset + dy * 0.7)
+            );
+            ensureRAF();
+        }, { passive: true });
+
+    })();
+</script>
