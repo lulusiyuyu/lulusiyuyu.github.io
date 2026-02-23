@@ -1,36 +1,36 @@
 <script>
-documen    t.ad     EventListener("DOMContentLoaded", function     ()     {
-    // Select el     ments that should have the Apple-style fad     -up animation
-    const elementsToAnimate = document.querySelector     ll(
-        '.post-entry, .profile_inner, .post-content, .p     ge-header, .footer'
-    );
-    
-    // Add the starting sta     e class to all identified elements
-    elementsToAnima     e.f    orEach(el => {
-              el.classL        t.add('fade-up');
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select elements that should have the Apple-style fade-up animation
+        const elementsToAnimate = document.querySelectorAll(
+            '.post-entry, .profile_inner, .post-content, .page-header, .footer'
+        );
 
-    // Intersection        bserver to trigger the animation when scrolled        nto view
-    const observer = new IntersectionO        erver((entries, observer) => {
-        en        ies.forEach(entry          {
-            if (entry.isIntersecting) {
-                      // Add tiny delay for staggered effect when multip         elements appear at        nce
-               setTimeout(() => {
-                          entry.target.classList.add('visib        ');
-          }, 50);
-                
-                // Stop        bserving once animated
-                obs        ver.unobserve(entry.target);
-            }
+        // Add the starting state class to all identified elements
+        elementsToAnimate.forEach(el => {
+            el.classList.add('fade-up');
         });
-          }, {
-       threshold: 0.05, 
-              rootMargin "0px 0px -40px 0px"
-    });
 
-    // Star        observing
-    elementsToAnimate.forEach(el => {
-        observer.observe(el);
+        // Intersection Observer to trigger the animation when scrolled into view
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add tiny delay for staggered effect when multiple elements appear at once
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, 50);
+
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: "0px 0px -40px 0px"
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
+        });
     });
-});
 </script>
