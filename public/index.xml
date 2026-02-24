@@ -2,32 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>刘时宇 (Liu Shiyu)</title>
-    <link>http://localhost:1313/</link>
+    <link>https://lulusiyuyu.github.io/</link>
     <description>Recent content on 刘时宇 (Liu Shiyu)</description>
-    <generator>Hugo -- 0.125.4</generator>
+    <generator>Hugo -- 0.146.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Feb 2026 13:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lulusiyuyu.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>深入理解 Self-Attention 与 FFN (Transformer 核心)</title>
-      <link>http://localhost:1313/posts/self-attention-ffn-intro/</link>
+      <link>https://lulusiyuyu.github.io/posts/self-attention-ffn-intro/</link>
       <pubDate>Tue, 24 Feb 2026 13:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/self-attention-ffn-intro/</guid>
+      <guid>https://lulusiyuyu.github.io/posts/self-attention-ffn-intro/</guid>
       <description>直观展示 KaTeX 公式渲染与 Mermaid.js 流程图渲染能力。</description>
     </item>
     <item>
       <title>我的第一篇技术博客：从零搭建个人履历网站</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
+      <link>https://lulusiyuyu.github.io/posts/hello-world/</link>
       <pubDate>Mon, 23 Feb 2026 20:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>大家好，我是刘时宇。 这是我的第一篇技术博客。为了在寻找推荐系统或后端研发相关实习工作时，能够更好地展示我的技术积累和实验室经验，我决定使用 Hugo</description>
+      <guid>https://lulusiyuyu.github.io/posts/hello-world/</guid>
+      <description>&lt;p&gt;大家好，我是刘时宇。&lt;/p&gt;
+&lt;p&gt;这是我的第一篇技术博客。为了在寻找&lt;strong&gt;推荐系统&lt;/strong&gt;或&lt;strong&gt;后端研发&lt;/strong&gt;相关实习工作时，能够更好地展示我的技术积累和实验室经验，我决定使用 &lt;strong&gt;Hugo&lt;/strong&gt; 和 &lt;strong&gt;GitHub Pages&lt;/strong&gt; 快速搭建了这个个人博客。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于我 (About Me)</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://lulusiyuyu.github.io/about/</link>
       <pubDate>Mon, 23 Feb 2026 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>👨‍💻 刘时宇 (Liu Shiyu) 📍 地址: 广东广州 📱 电话: 15766574529 ✉️ Email: shiyuliu.dev@qq.com 🎯 求职意向: 后端开发 / 推荐系统 / 搜索与广告推送（实习） 🎓 教育背景 华南师范大学 — 软件工程 (学</description>
+      <guid>https://lulusiyuyu.github.io/about/</guid>
+      <description>&lt;h2 id=&#34;-刘时宇-liu-shiyu&#34;&gt;👨‍💻 刘时宇 (Liu Shiyu)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;📍 地址&lt;/strong&gt;: 广东广州&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;📱 电话&lt;/strong&gt;: 15766574529&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;✉️ Email&lt;/strong&gt;: &lt;a href=&#34;mailto:shiyuliu.dev@qq.com&#34;&gt;shiyuliu.dev@qq.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🎯 求职意向&lt;/strong&gt;: 后端开发 / 推荐系统 / 搜索与广告推送（实习）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-教育背景&#34;&gt;🎓 教育背景&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;华南师范大学&lt;/strong&gt; — 软件工程 (学术型硕士) &lt;em&gt;[ 2024 - 至今 ]&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

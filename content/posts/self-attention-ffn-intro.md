@@ -1,7 +1,7 @@
 ---
 title: "深入理解 Self-Attention 与 FFN (Transformer 核心)"
 date: 2026-02-24T13:30:00+08:00
-draft: true
+draft: false
 math: true
 mermaid: true
 tags: ["Deep Learning", "Transformer", "Algorithm"]
