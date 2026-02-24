@@ -10,177 +10,177 @@
     --code-bg: #f5f5f7;
     --border: #d2d2d7;
     --link-color: #0066cc;
-    --apple-font: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+    --apple-font: "SF Pro Text", "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-/* --- Dark Theme Overrides --- */
-[data-theme="dark"] {
-    --theme: #000000;
-    --entry: #1d1d1f;
-    --primary: #f5f5f7;
-    --secondary: #86868b;
-    --tertiary: #6e6e73;
-    --content: #f5f5f7;
-    --hljs-bg: #1d1d1f;
-    --code-bg: #1d1d1f;
-    --border: #424245;
-    --link-color: #2997ff;
-}
+    /* --- Dark Theme Overrides --- */
+    [data-theme="dark"] {
+        --theme: #000000;
+        --entry: #1d1d1f;
+        --primary: #f5f5f7;
+        --secondary: #86868b;
+        --tertiary: #6e6e73;
+        --content: #f5f5f7;
+        --hljs-bg: #1d1d1f;
+        --code-bg: #1d1d1f;
+        --border: #424245;
+        --link-color: #2997ff;
+    }
 
-/* --- Base Typography & Body --- */
-body {
-    font-family: var(--apple-font);
-    font-weight: 400;
-    letter-spacing: -0.015em;
-    line-height: 1.5;
-    background-color: var(--theme);
-    color: var(--primary);
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
+    /* --- Base Typography & Body --- */
+    body {
+        font-family: var(--apple-font);
+        font-weight: 400;
+        letter-spacing: -0.015em;
+        line-height: 1.6;
+        background-color: var(--theme);
+        color: var(--primary);
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 600;
-    letter-spacing: -0.022em;
-    /* Apple's slightly tight tracking for headings */
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 600;
+        letter-spacing: -0.022em;
+        /* Apple's slightly tight tracking for headings */
+    }
 
-/* --- Header / Navbar Glassmorphism --- */
-.header {
-    background: rgba(245, 245, 247, 0.7) !important;
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: background 0.5s ease, border-bottom 0.5s ease;
-}
+    /* --- Header / Navbar Glassmorphism --- */
+    .header {
+        background: rgba(245, 245, 247, 0.7) !important;
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: background 0.5s ease, border-bottom 0.5s ease;
+    }
 
-[data-theme="dark"] .header {
-    background: rgba(29, 29, 31, 0.7) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
+    [data-theme="dark"] .header {
+        background: rgba(29, 29, 31, 0.7) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-/* --- Cards (Post Entries) Style --- */
-.post-entry {
-    background: var(--entry);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-    border: 1px solid transparent;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
+    /* --- Cards (Post Entries) Style --- */
+    .post-entry {
+        background: var(--entry);
+        border-radius: 20px;
+        padding: 28px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        border: 1px solid transparent;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
 
-.post-entry:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-}
+    .post-entry:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
 
-[data-theme="dark"] .post-entry {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-}
+    [data-theme="dark"] .post-entry {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    }
 
-[data-theme="dark"] .post-entry:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-}
+    [data-theme="dark"] .post-entry:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
 
-/* --- Images & Avatars --- */
-img {
-    border-radius: 14px;
-}
+    /* --- Images & Avatars --- */
+    img {
+        border-radius: 14px;
+    }
 
-.profile_inner .profile-img {
-    border-radius: 50%;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+    .profile_inner .profile-img {
+        border-radius: 50%;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-[data-theme="dark"] .profile_inner .profile-img {
-    box-shadow: 0 12px 32px rgba(255, 255, 255, 0.05);
-}
+    [data-theme="dark"] .profile_inner .profile-img {
+        box-shadow: 0 12px 32px rgba(255, 255, 255, 0.05);
+    }
 
-.profile_inner .profile-img:hover {
-    transform: scale(1.05);
-}
+    .profile_inner .profile-img:hover {
+        transform: scale(1.05);
+    }
 
-/* --- Buttons (Apple Pill Style) --- */
-.profile_inner .buttons .button,
-.button {
-    border-radius: 980px !important;
-    /* Perfect circle pill */
-    padding: 12px 28px !important;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    background: var(--entry);
-    color: var(--primary);
-    border: 1px solid var(--border);
-}
+    /* --- Buttons (Apple Pill Style) --- */
+    .profile_inner .buttons .button,
+    .button {
+        border-radius: 980px !important;
+        /* Perfect circle pill */
+        padding: 12px 28px !important;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        background: var(--entry);
+        color: var(--primary);
+        border: 1px solid var(--border);
+    }
 
-.profile_inner .buttons .button:hover,
-.button:hover {
-    background: var(--primary);
-    color: var(--theme);
-    border-color: var(--primary);
-    transform: scale(1.03);
-}
+    .profile_inner .buttons .button:hover,
+    .button:hover {
+        background: var(--primary);
+        color: var(--theme);
+        border-color: var(--primary);
+        transform: scale(1.03);
+    }
 
-/* --- Links --- */
-a {
-    transition: color 0.2s ease, opacity 0.2s ease;
-}
+    /* --- Links --- */
+    a {
+        transition: color 0.2s ease, opacity 0.2s ease;
+    }
 
-.post-content a {
-    color: var(--link-color);
-    text-decoration: none;
-}
+    .post-content a {
+        color: var(--link-color);
+        text-decoration: none;
+    }
 
-.post-content a:hover {
-    text-decoration: underline;
-    opacity: 0.8;
-}
+    .post-content a:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
 
-/* --- Apple-style Scroll Animation Classes --- */
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
-}
+    /* --- Apple-style Scroll Animation Classes --- */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
 
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-/* --- No Overscroll Bounce (Rubber-banding) --- */
-html,
-body {
-    overscroll-behavior-y: none;
-}
+    /* --- No Overscroll Bounce (Rubber-banding) --- */
+    html,
+    body {
+        overscroll-behavior-y: none;
+    }
 
-/* --- Dark Mode Header Text Fix --- */
-[data-theme="dark"] .header,
-[data-theme="dark"] .header * {
-    color: #f5f5f7 !important;
-}
+    /* --- Dark Mode Header Text Fix --- */
+    [data-theme="dark"] .header,
+    [data-theme="dark"] .header * {
+        color: #f5f5f7 !important;
+    }
 
-[data-theme="dark"] .header svg {
-    fill: #f5f5f7 !important;
-}
+    [data-theme="dark"] .header svg {
+        fill: #f5f5f7 !important;
+    }
 
-/* --- Home About Section (Apple Scroll Animation) --- */
-.home-about-section {
-    max-width: var(--main-width);
-    margin: 40px auto;
-    padding: 20px;
-    background: var(--entry);
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-}
+    /* --- Home About Section (Apple Scroll Animation) --- */
+    .home-about-section {
+        max-width: var(--main-width);
+        margin: 40px auto;
+        padding: 20px;
+        background: var(--entry);
+        border-radius: 20px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
 
-[data-theme="dark"] .home-about-section {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    [data-theme="dark"] .home-about-section {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    }
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GitHub Pages on 刘时宇 (Liu Shiyu)</title>
+    <link>http://localhost:1313/tags/github-pages/</link>
+    <description>Recent content in GitHub Pages on 刘时宇 (Liu Shiyu)</description>
+    <generator>Hugo -- 0.125.4</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Feb 2026 20:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的第一篇技术博客：从零搭建个人履历网站</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Mon, 23 Feb 2026 20:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>大家好，我是刘时宇。 这是我的第一篇技术博客。为了在寻找推荐系统或后端研发相关实习工作时，能够更好地展示我的技术积累和实验室经验，我决定使用 Hugo</description>
+    </item>
+  </channel>
+</rss>

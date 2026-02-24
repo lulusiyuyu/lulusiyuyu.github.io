@@ -10,6 +10,7 @@ enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+hasCJKLanguage: true
 
 author: '刘时宇'
 
@@ -25,6 +26,8 @@ params:
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
+  math: true
+  mermaid: true
 
   profileMode:
     enabled: true
@@ -42,6 +45,14 @@ params:
 menu:
   main:
     - identifier: 'posts'
-      name: '博客 (Posts)'
+      name: '全部博文 (Posts)'
       url: '/posts/'
+      weight: 10
+    - identifier: 'categories'
+      name: '分类 (Categories)'
+      url: '/categories/'
       weight: 20
+    - identifier: 'tags'
+      name: '标签 (Tags)'
+      url: '/tags/'
+      weight: 30
