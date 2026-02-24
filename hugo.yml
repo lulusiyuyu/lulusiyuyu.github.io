@@ -56,3 +56,20 @@ menu:
       name: '标签 (Tags)'
       url: '/tags/'
       weight: 30
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+          - - $
+            - $

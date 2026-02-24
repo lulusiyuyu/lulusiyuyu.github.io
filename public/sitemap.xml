@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lulusiyuyu.github.io/tags/algorithm/</loc>
+    <loc>http://localhost:1313/tags/algorithm/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/categories/deep-learning/</loc>
+    <loc>http://localhost:1313/categories/deep-learning/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/tags/deep-learning/</loc>
+    <loc>http://localhost:1313/tags/deep-learning/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/tags/transformer/</loc>
+    <loc>http://localhost:1313/tags/transformer/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/posts/self-attention-ffn-intro/</loc>
+    <loc>http://localhost:1313/posts/self-attention-ffn-intro/</loc>
     <lastmod>2026-02-24T13:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/tags/blog/</loc>
+    <loc>http://localhost:1313/tags/blog/</loc>
     <lastmod>2026-02-23T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/tags/github-pages/</loc>
+    <loc>http://localhost:1313/tags/github-pages/</loc>
     <lastmod>2026-02-23T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/tags/hugo/</loc>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2026-02-23T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/posts/hello-world/</loc>
+    <loc>http://localhost:1313/posts/hello-world/</loc>
     <lastmod>2026-02-23T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2026-02-23T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://lulusiyuyu.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-02-23T00:00:00+08:00</lastmod>
   </url>
 </urlset>

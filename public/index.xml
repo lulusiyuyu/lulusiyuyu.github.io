@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>刘时宇 (Liu Shiyu)</title>
-    <link>https://lulusiyuyu.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on 刘时宇 (Liu Shiyu)</description>
     <generator>Hugo -- 0.146.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Feb 2026 13:30:00 +0800</lastBuildDate>
-    <atom:link href="https://lulusiyuyu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>深入理解 Self-Attention 与 FFN (Transformer 核心)</title>
-      <link>https://lulusiyuyu.github.io/posts/self-attention-ffn-intro/</link>
+      <link>http://localhost:1313/posts/self-attention-ffn-intro/</link>
       <pubDate>Tue, 24 Feb 2026 13:30:00 +0800</pubDate>
-      <guid>https://lulusiyuyu.github.io/posts/self-attention-ffn-intro/</guid>
+      <guid>http://localhost:1313/posts/self-attention-ffn-intro/</guid>
       <description>直观展示 KaTeX 公式渲染与 Mermaid.js 流程图渲染能力。</description>
     </item>
     <item>
       <title>我的第一篇技术博客：从零搭建个人履历网站</title>
-      <link>https://lulusiyuyu.github.io/posts/hello-world/</link>
+      <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Mon, 23 Feb 2026 20:00:00 +0800</pubDate>
-      <guid>https://lulusiyuyu.github.io/posts/hello-world/</guid>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
       <description>&lt;p&gt;大家好，我是刘时宇。&lt;/p&gt;
 &lt;p&gt;这是我的第一篇技术博客。为了在寻找&lt;strong&gt;推荐系统&lt;/strong&gt;或&lt;strong&gt;后端研发&lt;/strong&gt;相关实习工作时，能够更好地展示我的技术积累和实验室经验，我决定使用 &lt;strong&gt;Hugo&lt;/strong&gt; 和 &lt;strong&gt;GitHub Pages&lt;/strong&gt; 快速搭建了这个个人博客。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于我 (About Me)</title>
-      <link>https://lulusiyuyu.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 23 Feb 2026 00:00:00 +0800</pubDate>
-      <guid>https://lulusiyuyu.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;h2 id=&#34;-刘时宇-liu-shiyu&#34;&gt;👨‍💻 刘时宇 (Liu Shiyu)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;📍 地址&lt;/strong&gt;: 广东广州&lt;/li&gt;
