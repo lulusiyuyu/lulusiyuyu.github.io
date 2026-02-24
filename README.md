@@ -16,6 +16,11 @@
 - 算法竞赛代码与思路分享
 - 个人简历与项目经历
 
+### ✨ 核心特性
+- **Apple 极致视觉**：全站原生微交互，Apple 设备原生字体与 `Inter` 平滑兜底，深度优化的毛玻璃与圆角设定。
+- **学术级渲染**：内嵌 **KaTeX** 引擎（丝滑支持复杂 LaTeX 数学公式渲染）与 **Mermaid.js** 引擎（原生支持流程图与架构图渲染），自动适配亮/暗色主题。
+- **单页平滑体验**：移除边缘回弹，构建精美的滚动淡入沉浸式阅读架构。
+
 ---
 
 ## 🛠️ 技术栈
@@ -50,7 +55,10 @@ lulusiyuyu.github.io/
 │   ├── _default/
 │   │   └── list.html              # 覆写的主页列表模板（注入了 About 页面的滚动动效呈现）
 │   └── partials/
-│       └── extend_footer.html     # 注入用于触发 Fade-Up 苹果式双向滚动动效的 JS
+│       ├── extend_footer.html     # 注入用于触发 Fade-Up 苹果式双向滚动动效的 JS
+│       ├── extend_head.html       # 注入 Inter 字体、覆盖底层组件、调用 math.html
+│       ├── math.html              # KaTeX 与 Mermaid.js 渲染引擎的底层调度与修复器
+│       └── comments.html          # Giscus 评论区代码骨架
 ├── themes/
 │   └── PaperMod/                  # 主题（Git Submodule）
 ├── hugo.yml                       # Hugo 核心配置文件
@@ -86,6 +94,12 @@ cd lulusiyuyu.github.io
 ```bash
 ~/.local/bin/hugo new content posts/my-new-post.md
 ```
+
+> **💡 Tips - 学术写作**：如果你需要在文章中渲染数学公式或架构图，请在 Markdown 文件开头的 Frontmatter 区域加上以下配置：
+> ```yaml
+> math: true
+> mermaid: true
+> ```
 
 写完后将 `draft: true` 改为 `false`，然后 `git push` 即触发自动部署。
 

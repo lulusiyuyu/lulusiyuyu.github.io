@@ -88,10 +88,14 @@ my-personal-blog/
 │   ├── _default/
 │   │   └── list.html              # 重写主页模板，注入 About 简历页面的内容且配置多段连贯 Apple 式动效
 │   └── partials/
-│       └── extend_footer.html     # JS 注入，负责 IntersectionObserver Fade-Up 动效
+│       ├── extend_footer.html     # JS 注入，负责 IntersectionObserver Fade-Up 动效
+│       ├── extend_head.html       # Inter 字体引入，调度全局脚本
+│       ├── math.html              # KaTeX 公式处理器与 Mermaid.js 图表渲染器，内置了 Hugo code 标签层级修正脚本
+│       ├── google_analytics.html  # 置空组件。为了兼容 Hugo 0.128+ 脱离废弃基础设定的修复机制
+│       └── comments.html          # Giscus 评论区布局组件！等待 GitHub Repo 开启 Discussions 功能
 ├── themes/
 │   └── PaperMod/                  # 主题（Git Submodule，勿直接修改）
-├── hugo.yml                       # Hugo 核心配置（注意：不是 hugo.toml）
+├── hugo.yml                       # Hugo 核心配置（注意：不是 hugo.toml。已集成 CJK 支持、Goldmark Math 透传扩展）
 └── README.md                      # 项目说明文档
 ```
 
@@ -110,6 +114,19 @@ params:
   profileMode:
     enabled: true  # 启用了首页 Profile 展示模式
     imageUrl: 'https://github.com/lulusiyuyu.png'  # GitHub 头像
+    imageWidth: 150 # 已特调为 150px 以放大圆形效果
+    imageHeight: 150
+
+# ...
+hasCJKLanguage: true  # 优化中文段落字数与阅读时间估算
+
+# 为了支持 KaTeX 必须添加的解释器屏蔽
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters: ... # 详见具体配置，屏蔽 $ 转化
 ```
 
 **重要版本要求**：
@@ -174,6 +191,9 @@ git push origin main
 | Hugo Build 失败 | PaperMod 要求 Hugo ≥ 0.146.0 | 升级 Action 中的 HUGO_VERSION 至 0.146.0 |
 | `paginate` 配置报错 | v0.128.0 废弃了该字段 | 改为 `pagination.pagerSize` |
 | GitHub Pages 404 | Pages Source 未设置为 GitHub Actions | 手动在 Settings → Pages 中修改 |
+| PaperMod 内置 Analytics 报错 | `_internal/google_analytics.html` 已被 Hugo v0.128+ 移除 | 创建一份空的 `layouts/partials/google_analytics.html` 兜底 |
+| `_k` 破坏渲染引擎 | Hugo 底层引擎把 `_` 误解释为了 `<em>` 斜体 | `hugo.yml` 强开 Goldmark Passthrough 并加入 `delimiters` 透传拦截。 |
+| Mermaid.js 无响应 | Hugo 将 md 渲染成了 `<pre><code class="language-mermaid">` | `math.html` 通过 JS 获取并将其重构为官方 `div` 再唤醒渲染。|
 
 ---
 
@@ -184,14 +204,15 @@ git push origin main
 > - **呼吸动效 (Motion)**：内容区域滚动时触发 Fade-Up 与平滑上滑（通过 IntersectionObserver 在 `extend_footer.html` 实现）。修复了在深色模式下的各种可读性问题，移除了滚动回弹 (OverscrollBounce)。支持**正反双向动画播放**，上滑时剥离可见类，再次遇界即播放，极具质感。包含About大外框也具备此出场效果。
 > - **单页动效架构 (Single Page Experience)**：`About` 关于我页面的内容不再通过按钮和菜单单独点击进入，而是直接注入到了主页 (`layouts/_default/list.html`)。所有的段落、标题都附带了滚轮滑下时的 Apple 丝滑展现。
 > - **微小细节**：运用 Backdrop-filter（毛玻璃顶部导航/Glassmorphism）、小半径圆角（14px~20px）、Pill 形状按钮（圆角 980px）、微小交互浮动缩放等原生质感 UI。
-> - **注意事项**：请勿破坏此风格的纯粹感，严禁再使用高饱和度的渐变光晕/Blob（以前被回滚过），后续若需调整或增加组件，必须符合这种内敛、干练的 Apple 品牌质感。
+> - **学术写作极致优化 (2026-02-24 升级)**: 深度定制并开启了 **KaTeX (极速公式排版)**、**Mermaid.js (动态结构视图)** 支持；拦截了 Markdown 对公式下标的干扰。为了让移动端和全平台的字体排版统一规整，额外增加了开源 Apple 系平替字体 `Inter`；并且调大了主页 Profile 的形象为大边距圆形 (150px)。
 
 ---
 
 ## 📋 待办 / Future Work
 
-- [ ] 写更多技术博文（推荐系统、LLM 服务化、竞赛题解等）
+- [x] 配置学术版模块支持 (KaTeX, Mermaid 支持，解决各种底层渲染 bug)
+- [x] 开通分类 (Categories) 与标签 (Tags) 专属路由层
+- [x] 添加评论系统与基础代码预制项（等待用户在 Github 仓库开启 Discussions 即可生效 Giscus）
+- [ ] 写更多真实硬核技术博文（如 LLM 服务化，推荐系统工程实践等）
+- [ ] 引入隐私友好网站统计方案（Umami/Google Analytics，如需实施向 AI Agent 给定 Token 即可埋点）
 - [ ] 配置自定义域名（如有需要）
-- [ ] 添加评论系统（如 Giscus，基于 GitHub Discussions）
-- [ ] 引入 Google Analytics 或 Umami（隐私友好统计）
-- [ ] **首页视觉优化**（需要用户先提供参考网站再设计，切勿擅自动手）
