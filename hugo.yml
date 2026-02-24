@@ -34,8 +34,8 @@ params:
     title: 'Hi, I am 刘时宇 (Liu Shiyu) 👋'
     subtitle: '推荐系统 | 后端开发 | 模型部署'
     imageUrl: 'https://github.com/lulusiyuyu.png'
-    imageWidth: 120
-    imageHeight: 120
+    imageWidth: 150
+    imageHeight: 150
     buttons:
       - name: '博客文章 (Posts)'
         url: '/posts'
