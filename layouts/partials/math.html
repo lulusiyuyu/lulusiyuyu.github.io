@@ -28,9 +28,24 @@
 <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
     mermaid.initialize({
-        startOnLoad: true,
+        startOnLoad: false,
         theme: (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'default'),
         securityLevel: 'loose'
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const mermaidElements = document.querySelectorAll('.language-mermaid');
+        if (mermaidElements.length > 0) {
+            mermaidElements.forEach(el => {
+                // Hugo wraps code in <pre><code>, mermaid needs the text content. We replace it.
+                const preNode = el.parentNode;
+                const mermaidDiv = document.createElement('div');
+                mermaidDiv.classList.add('mermaid');
+                mermaidDiv.textContent = el.textContent;
+                preNode.parentNode.replaceChild(mermaidDiv, preNode);
+            });
+            mermaid.run({ querySelector: '.mermaid' });
+        }
     });
 </script>
 {{ end }}

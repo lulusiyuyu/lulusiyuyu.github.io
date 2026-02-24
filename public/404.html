@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,16 +9,16 @@
 <meta name="keywords" content="">
 <meta name="description" content="Researcher &amp; Developer in Recommendation Systems and Backend.">
 <meta name="author" content="刘时宇">
-<link rel="canonical" href="https://lulusiyuyu.github.io/404.html">
+<link rel="canonical" href="http://localhost:1313/404.html">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.3c7b59eb6ec63d1fe9cdcabc222524f4976d0d673154ccf90bb4c02312426e2c.css" integrity="sha256-PHtZ627GPR/pzcq8IiUk9JdtDWcxVMz5C7TAIxJCbiw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://lulusiyuyu.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://lulusiyuyu.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://lulusiyuyu.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://lulusiyuyu.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://lulusiyuyu.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://lulusiyuyu.github.io/404.html">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/404.html">
 <noscript>
     <style>
         #theme-toggle,
@@ -76,17 +76,68 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
- 
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-code, pre {
-    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, Monaco, monospace;
-    font-size: 0.9em;
-}
+     
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    code,
+    pre {
+        font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, Monaco, monospace;
+        font-size: 0.9em;
+    }
 </style>
-<meta property="og:url" content="https://lulusiyuyu.github.io/404.html">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+    integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6vV3FZXZ0cinmKABKqyBhz00TwlHK"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+O80333mIB2rswkB01vQ"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+        startOnLoad: false,
+        theme: (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'default'),
+        securityLevel: 'loose'
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const mermaidElements = document.querySelectorAll('.language-mermaid');
+        if (mermaidElements.length > 0) {
+            mermaidElements.forEach(el => {
+                
+                const preNode = el.parentNode;
+                const mermaidDiv = document.createElement('div');
+                mermaidDiv.classList.add('mermaid');
+                mermaidDiv.textContent = el.textContent;
+                preNode.parentNode.replaceChild(mermaidDiv, preNode);
+            });
+            mermaid.run({ querySelector: '.mermaid' });
+        }
+    });
+</script>
+<meta property="og:url" content="http://localhost:1313/404.html">
   <meta property="og:site_name" content="刘时宇 (Liu Shiyu)">
   <meta property="og:title" content="404 Page not found">
   <meta property="og:description" content="Researcher &amp; Developer in Recommendation Systems and Backend.">
@@ -101,7 +152,7 @@ code, pre {
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://lulusiyuyu.github.io/" accesskey="h" title="刘时宇 (Liu Shiyu) (Alt + H)">刘时宇 (Liu Shiyu)</a>
+            <a href="http://localhost:1313/" accesskey="h" title="刘时宇 (Liu Shiyu) (Alt + H)">刘时宇 (Liu Shiyu)</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -127,17 +178,17 @@ code, pre {
         </div>
         <ul id="menu">
             <li>
-                <a href="https://lulusiyuyu.github.io/posts/" title="全部博文 (Posts)">
+                <a href="http://localhost:1313/posts/" title="全部博文 (Posts)">
                     <span>全部博文 (Posts)</span>
                 </a>
             </li>
             <li>
-                <a href="https://lulusiyuyu.github.io/categories/" title="分类 (Categories)">
+                <a href="http://localhost:1313/categories/" title="分类 (Categories)">
                     <span>分类 (Categories)</span>
                 </a>
             </li>
             <li>
-                <a href="https://lulusiyuyu.github.io/tags/" title="标签 (Tags)">
+                <a href="http://localhost:1313/tags/" title="标签 (Tags)">
                     <span>标签 (Tags)</span>
                 </a>
             </li>
@@ -149,7 +200,7 @@ code, pre {
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://lulusiyuyu.github.io/">刘时宇 (Liu Shiyu)</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">刘时宇 (Liu Shiyu)</a></span> · 
 
     <span>
         Powered by

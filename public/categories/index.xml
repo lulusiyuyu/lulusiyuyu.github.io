@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on 刘时宇 (Liu Shiyu)</title>
-    <link>https://lulusiyuyu.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 刘时宇 (Liu Shiyu)</description>
     <generator>Hugo -- 0.146.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Feb 2026 13:30:00 +0800</lastBuildDate>
-    <atom:link href="https://lulusiyuyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deep Learning</title>
-      <link>https://lulusiyuyu.github.io/categories/deep-learning/</link>
+      <link>http://localhost:1313/categories/deep-learning/</link>
       <pubDate>Tue, 24 Feb 2026 13:30:00 +0800</pubDate>
-      <guid>https://lulusiyuyu.github.io/categories/deep-learning/</guid>
+      <guid>http://localhost:1313/categories/deep-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>随笔</title>
-      <link>https://lulusiyuyu.github.io/categories/%E9%9A%8F%E7%AC%94/</link>
+      <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Mon, 23 Feb 2026 20:00:00 +0800</pubDate>
-      <guid>https://lulusiyuyu.github.io/categories/%E9%9A%8F%E7%AC%94/</guid>
+      <guid>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
   </channel>
